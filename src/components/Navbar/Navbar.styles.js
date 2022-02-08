@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
     flex: 1 1 auto;
+
+    .active {
+        border-bottom: 2px solid black;
+    }
     
     ul {
         padding-left: 0;
@@ -29,6 +33,6 @@ export const NavbarWrapper = styled.nav`
     }
 
     a:hover {
-        border-bottom: 3px solid black;
+        border-bottom: 2px solid black;
     }
 `;
