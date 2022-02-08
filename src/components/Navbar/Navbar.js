@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { NavbarWrapper } from './Navbar.styles';
 
 export const Navbar = () => {
@@ -6,16 +7,16 @@ export const Navbar = () => {
         <NavbarWrapper>
             <ul>
                 <li>
-                    <a href='#'>Movies</a>
+                    <NavLink to='movies'>Movies</NavLink>
                 </li>
                 <li>
-                    <a href='#'>TV Shows</a>
+                    <NavLink to='tvshows'>TV Shows</NavLink>
                 </li>
                 <li>
-                    <a href='#'>Trailers</a>
+                    <NavLink to='trailers'>Trailers</NavLink>
                 </li>
                 <li>
-                    <a href='#'>Lists</a>
+                    <NavLink to='lists'>Lists</NavLink>
                 </li>
             </ul>
         </NavbarWrapper>
