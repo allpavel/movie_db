@@ -7,6 +7,7 @@ import { Lists } from './pages/Lists';
 import { Movies } from './pages/Movies';
 import { Trailers } from './pages/Trailers';
 import { TVShows } from './pages/TVShows';
+import './normalize.css';
 
 export const App = () => {
     return (
