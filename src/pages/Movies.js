@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import MovieService from '../API/MovieService';
-import { Carousel } from '../components/Carousel/Carousel';
+import React from 'react';
+import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../API/config';
+import { HeroImage } from '../components/HeroImage/HeroImage';
+import { useGetMovies } from '../hooks/useGetMovies';
+
 
 export const Movies = () => {
-    const [movies, setMovies] = useState();
-
-    const getMovies = async () => {
-        const movies = await MovieService.getPopularMovies();
-        console.log(movies);
-    }
-
-    // useEffect(() => {
-    //     getMovies();
-    // }, [])
+    const { movies, isLoading, error } = useGetMovies();
 
     return (
-        <>
-            <Carousel />
-        </>
-        
+        <>  
+            {movies.results[0]
+                ? <HeroImage
+                    image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`}
+                    title={movies.results[0].original_title}
+                    description={movies.results[0].overview}
+                />
+                : <h1>Nothing to show</h1>}
+            <h1>Home Page</h1>
+        </>        
     )
 };

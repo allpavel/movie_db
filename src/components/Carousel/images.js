@@ -3,7 +3,7 @@ import halloween from '../../images/halloweenkills.jpg';
 import scream from '../../images/scream.jpg';
 import shutter_island from '../../images/shutter_island.jpg';
 
-export const sliderImage = [
+export const data = [
     {
         title: 'chainsaw',
         src: chainsaw

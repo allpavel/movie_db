@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImage from '../../images/logo.svg';
+// import LogoImage from '../../images/logo.svg';
 import { Wrapper, Logo } from './Header.styles';
 import { Navbar } from '../Navbar/Navbar';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -9,7 +9,7 @@ export const Header = () => {
         <>
             <Wrapper>
                 <NavLink to='/'>
-                    <Logo src={LogoImage} alt='movieDV-logo' />
+                    {/* <Logo src={LogoImage} alt='movieDV-logo' /> */}
                 </NavLink>
                 <Navbar />
             </Wrapper>
