@@ -8,11 +8,12 @@ const initialState = {
     total_results: 0
 };
 
-export const useGetMovies = () => {
+export const useGetPopularMovies = () => {
     const [movies, setMovies] = useState(initialState);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [isLoadingMoreMovies, setIsLoadingMoreMovies] = useState(false);
 
     const getMovies = async (searchTerm = '', page) => {
         try {
@@ -35,5 +36,11 @@ export const useGetMovies = () => {
         getMovies(searchTerm, 1);
     }, [searchTerm]);
 
-    return { movies, isLoading, error, searchTerm, setSearchTerm };
+    useEffect(() => {
+        if (!isLoadingMoreMovies) return;
+        getMovies(searchTerm, movies.page + 1);
+        setIsLoadingMoreMovies(false);
+    }, [isLoadingMoreMovies, movies.page, searchTerm]);
+
+    return { movies, isLoading, error, searchTerm, setSearchTerm, setIsLoadingMoreMovies };
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Image = styled.img`
@@ -24,7 +25,13 @@ const Image = styled.img`
 `;
 
 export const Thumbnail = ({ image, movieId, clickable }) => {
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate(`${movieId}`)
+    }
+
     return (
-        <Image src={image} alt='movie-thumb' />
+        <Image src={image} alt='movie-thumb' onClick={handleNavigate} />
     )
 }

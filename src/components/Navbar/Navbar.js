@@ -7,7 +7,7 @@ export const Navbar = () => {
         <NavbarWrapper>
             <ul>
                 <li>
-                    <NavLink to='movies'>Movies</NavLink>
+                    <NavLink to='movie'>Movies</NavLink>
                 </li>
                 <li>
                     <NavLink to='tvshows'>TV Shows</NavLink>
