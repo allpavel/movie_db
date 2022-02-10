@@ -8,7 +8,7 @@ const initialState = {
     total_results: 0
 };
 
-export const useGetMovies = () => {
+export const useGetPopularMovies = () => {
     const [movies, setMovies] = useState(initialState);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);

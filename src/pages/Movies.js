@@ -7,11 +7,11 @@ import { Thumbnail } from '../components/Thumbnail/Thumbnail';
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { Button } from '../components/Button/Button';
 import { Spinner } from '../components/Spinner/Spinner';
-import { useGetMovies } from '../hooks/useGetMovies';
+import { useGetPopularMovies } from '../hooks/useGetPopularMovies';
 
 
 export const Movies = () => {
-    const { movies, isLoading, error, searchTerm, setSearchTerm, setIsLoadingMoreMovies } = useGetMovies();
+    const { movies, isLoading, error, searchTerm, setSearchTerm, setIsLoadingMoreMovies } = useGetPopularMovies();
 
     return (
         <>  
