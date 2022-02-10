@@ -5,11 +5,13 @@ import { HeroImage } from '../components/HeroImage/HeroImage';
 import { Grid } from '../components/Grid/Grid';
 import { Thumbnail } from '../components/Thumbnail/Thumbnail';
 import { SearchBar } from '../components/SearchBar/SearchBar';
+import { Button } from '../components/Button/Button';
+import { Spinner } from '../components/Spinner/Spinner';
 import { useGetMovies } from '../hooks/useGetMovies';
 
 
 export const Movies = () => {
-    const { movies, isLoading, error, searchTerm, setSearchTerm } = useGetMovies();
+    const { movies, isLoading, error, searchTerm, setSearchTerm, setIsLoadingMoreMovies } = useGetMovies();
 
     return (
         <>  
@@ -36,6 +38,8 @@ export const Movies = () => {
                     </div>
                 ))}
             </Grid>
+            {isLoading && <Spinner />}
+            {!isLoading && movies.page < movies.total_pages && <Button text={'Load More'} onClick={() => setIsLoadingMoreMovies(true)} />}
         </>        
     )
 };
