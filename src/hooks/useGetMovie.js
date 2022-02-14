@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import MovieService from "../API/MovieService";
+import { getItemFromStorage } from "../utils/utils";
 
 export const useGetMovie = (id) => {
   const [movie, setMovie] = useState({});
@@ -26,8 +27,18 @@ export const useGetMovie = (id) => {
   };
 
   useEffect(() => {
+    const sessionState = getItemFromStorage(id);
+    if (sessionState) {
+      setMovie(sessionState);
+      setIsLoading(false);
+      return;
+    }
     getMovies(id);
   }, [id]);
+
+  useEffect(() => {
+    sessionStorage.setItem(id, JSON.stringify(movie));
+  }, [id, movie]);
 
   return { movie, isLoading, loadError };
 };
