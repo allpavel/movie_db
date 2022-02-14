@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../../API/config";
 import { Thumbnail } from "../Thumbnail/Thumbnail";
 
@@ -115,4 +116,8 @@ export const MovieInfo = ({ movie }) => {
       </Content>
     </Wrapper>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.object,
 };

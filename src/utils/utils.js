@@ -14,3 +14,9 @@ export const convertMoney = (money) => {
   });
   return formatter.format(money);
 };
+
+// Get an item from a sessionStorage
+export const getItemFromStorage = (item) => {
+  const sessionState = sessionStorage.getItem(item);
+  return sessionState && JSON.parse(sessionState);
+};

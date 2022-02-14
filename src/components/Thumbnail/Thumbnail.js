@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Image = styled.img`
   width: 100%;
@@ -32,4 +33,9 @@ export const Thumbnail = ({ image, movieId }) => {
   };
 
   return <Image src={image} alt="movie-thumb" onClick={handleNavigate} />;
+};
+
+Thumbnail.propTypes = {
+  image: PropTypes.string,
+  movieId: PropTypes.number,
 };

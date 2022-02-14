@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { calcTime, convertMoney } from "../../utils/utils";
 
 const Wrapper = styled.section`
@@ -59,4 +60,10 @@ export const MovieInfoBar = ({ time, budget, revenue }) => {
       </Content>
     </Wrapper>
   );
+};
+
+MovieInfoBar.propTypes = {
+  time: PropTypes.number,
+  budget: PropTypes.number,
+  revenue: PropTypes.number,
 };

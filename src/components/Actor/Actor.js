@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.section`
   color: black;
@@ -34,4 +35,10 @@ export const Actor = ({ name, character, imageUrl }) => {
       <p>{character}</p>
     </Wrapper>
   );
+};
+
+Actor.propTypes = {
+  name: PropTypes.string,
+  character: PropTypes.string,
+  imageUrl: PropTypes.string,
 };
